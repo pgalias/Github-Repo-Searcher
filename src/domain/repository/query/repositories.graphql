@@ -1,0 +1,16 @@
+query Repos($query: String!, $pageSize: Int!, $lastItem: String) {
+    search(type: REPOSITORY, query: $query, first: $pageSize, after: $lastItem) {
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+        repositories: nodes {
+            ... on Repository {
+                name
+                url
+                forks: forkCount
+                stars: stargazerCount
+            }
+        }
+    }
+}
