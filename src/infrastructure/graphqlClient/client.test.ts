@@ -1,8 +1,8 @@
 import nock from 'nock';
-import { courier } from './courier';
-import { GraphQLError } from '../../domain/graphqlClient';
+import { GraphQLClient } from './client';
+import { GraphQLError } from './error';
 
-describe('courier', () => {
+describe('GraphQLClient', () => {
   let nockReq: nock.Interceptor;
   const query = `
       query Foo($after: Number!) {
@@ -32,7 +32,7 @@ describe('courier', () => {
 
     expect.assertions(1);
     return expect(
-      courier.query('http://localhost/graphql', {
+      GraphQLClient.query('http://localhost/graphql', {
         query,
         variables,
       }),
@@ -44,7 +44,7 @@ describe('courier', () => {
 
     expect.assertions(1);
     return expect(
-      courier.query('http://localhost/graphql', {
+      GraphQLClient.query('http://localhost/graphql', {
         query,
         variables,
       }),
@@ -58,7 +58,7 @@ describe('courier', () => {
 
     expect.assertions(1);
     return expect(
-      courier.query('http://localhost/graphql', {
+      GraphQLClient.query('http://localhost/graphql', {
         query,
         variables,
       }),
@@ -72,7 +72,7 @@ describe('courier', () => {
 
     expect.assertions(1);
     return expect(
-      courier.query('http://localhost/graphql', {
+      GraphQLClient.query('http://localhost/graphql', {
         query,
         variables,
       }),
@@ -86,7 +86,7 @@ describe('courier', () => {
 
     expect.assertions(1);
     return expect(
-      courier.query('http://localhost/graphql', {
+      GraphQLClient.query('http://localhost/graphql', {
         query,
         variables,
       }),

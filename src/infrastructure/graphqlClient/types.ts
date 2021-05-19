@@ -14,7 +14,3 @@ export type GraphQLResponse<T> = {
     message: string;
   }[];
 };
-
-export interface GraphqlClient {
-  query<T>(url: string, settings: QuerySettings): ApiResponse<T>;
-}
