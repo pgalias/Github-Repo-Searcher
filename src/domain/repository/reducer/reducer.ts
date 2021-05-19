@@ -3,7 +3,7 @@ import { Action } from './actions';
 import { Types } from './types';
 import { Repository } from '../model/repository';
 
-type PossibleActionPayloads = Repository[] | number | string | boolean;
+export type PossibleActionPayloads = Repository[] | number | string | boolean;
 
 export const reducer = (state = initialState, { type, payload }: Action<PossibleActionPayloads>): State => {
   switch (type) {

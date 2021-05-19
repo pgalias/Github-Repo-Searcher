@@ -1,12 +1,14 @@
 import { Repository } from '../model/repository';
 
+export type Metadata = {
+  endCursor: string | null;
+  hasNextPage: boolean;
+  pageSize: number;
+};
+
 export interface State {
   repositories: Repository[];
-  metadata: {
-    endCursor: string | null;
-    hasNextPage: boolean;
-    pageSize: number;
-  };
+  metadata: Metadata;
 }
 
 export const initialState: State = {
