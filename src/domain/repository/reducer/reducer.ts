@@ -10,7 +10,7 @@ export const reducer = (state = initialState, { type, payload }: Action<Possible
     case Types.SET_REPOSITORIES:
       return {
         ...state,
-        repositories: payload as Repository[],
+        repositories: [...state.repositories, ...(payload as Repository[])],
       };
     case Types.SET_CURSOR:
       return {
@@ -23,8 +23,10 @@ export const reducer = (state = initialState, { type, payload }: Action<Possible
     case Types.SET_PAGE_SIZE:
       return {
         ...state,
+        repositories: [],
         metadata: {
           ...state.metadata,
+          endCursor: null,
           pageSize: payload as number,
         },
       };

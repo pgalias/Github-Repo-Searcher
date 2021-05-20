@@ -1,21 +1,22 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { useSelector } from '../../contexts/repository/provider';
-import { selectRepositories } from '../../../domain/repository/reducer/selectors';
+import { selectPageSize } from '../../../domain/repository/reducer/selectors';
 import { useFetchRepositories } from './hooks/useFetchRepositories';
+import { DataTable } from './components/dataTable';
+import { Fetcher } from './components/fetcher';
 
 export const GithubSearcher: FunctionComponent = () => {
-  const repositories = useSelector(selectRepositories);
+  const pageSize = useSelector(selectPageSize);
   const fetch = useFetchRepositories();
 
   useEffect(() => {
-    console.log(repositories, 'repositories');
-  }, [repositories]);
+    fetch();
+  }, [pageSize]);
 
   return (
-    <div>
-      <button type="button" onClick={fetch}>
-        Fetch repos
-      </button>
-    </div>
+    <section>
+      <DataTable />
+      <Fetcher />
+    </section>
   );
 };
