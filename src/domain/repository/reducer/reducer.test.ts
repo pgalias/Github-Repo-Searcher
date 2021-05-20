@@ -1,5 +1,12 @@
 import { reducer } from './reducer';
-import { Action, setCursorAction, setHasNextPages, setPageSizeAction, setRepositoriesAction } from './actions';
+import {
+  Action,
+  setCursorAction,
+  setHasNextPagesAction,
+  setIsLoadingAction,
+  setPageSizeAction,
+  setRepositoriesAction,
+} from './actions';
 import { Repository } from '../model/repository';
 import { initialState, State } from './state';
 
@@ -52,7 +59,7 @@ describe('repository reducer', () => {
   });
 
   test('should merge current state with payload from setHasNextPageAction', () => {
-    const action = setHasNextPages(true);
+    const action = setHasNextPagesAction(true);
 
     state = {
       ...state,
@@ -69,6 +76,15 @@ describe('repository reducer', () => {
         ...state.metadata,
         hasNextPage: true,
       },
+    });
+  });
+
+  test('should merge current state with payload from setIsLoadingAction', () => {
+    const action = setIsLoadingAction(true);
+
+    expect(reducer(state, action)).toEqual({
+      ...state,
+      isLoading: true,
     });
   });
 

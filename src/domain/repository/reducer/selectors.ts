@@ -7,3 +7,4 @@ export const selectEndCursor = (store: State): string | null => selectMetadata(s
 export const selectPageSize = (store: State): number => selectMetadata(store).pageSize;
 export const selectHasNextPage = (store: State): boolean => selectMetadata(store).hasNextPage;
 export const selectSearch = (store: State): string => store.search;
+export const selectIsLoading = (store: State): boolean => store.isLoading;

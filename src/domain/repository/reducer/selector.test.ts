@@ -1,4 +1,12 @@
-import { selectRepositories, selectMetadata, selectEndCursor, selectHasNextPage, selectPageSize } from './selectors';
+import {
+  selectRepositories,
+  selectMetadata,
+  selectEndCursor,
+  selectHasNextPage,
+  selectPageSize,
+  selectSearch,
+  selectIsLoading,
+} from './selectors';
 import { initialState, Metadata, State } from './index';
 import { Repository } from '../model/repository';
 
@@ -12,7 +20,7 @@ describe('repository context selectors', () => {
 
   let state: State;
   beforeEach(() => {
-    state = { ...initialState, repositories, metadata };
+    state = { ...initialState, isLoading: true, repositories, metadata, search: 'foo' };
   });
 
   test('selectRepositories should return all repositories from the store', () => {
@@ -33,5 +41,13 @@ describe('repository context selectors', () => {
 
   test('selectHasNextPage should return has next page information from the store', () => {
     expect(selectHasNextPage(state)).toBe(metadata.hasNextPage);
+  });
+
+  test('selectSearch should return search from the store', () => {
+    expect(selectSearch(state)).toBe('foo');
+  });
+
+  test('selectIsLoading should return isLoading from the store', () => {
+    expect(selectIsLoading(state)).toBe(true);
   });
 });

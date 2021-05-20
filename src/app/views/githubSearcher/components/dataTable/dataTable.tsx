@@ -7,10 +7,12 @@ import TableFooter from '@material-ui/core/TableFooter';
 import Table from '@material-ui/core/Table';
 import { PageSizeSelector } from '../pageSizeSelector';
 import { useSelector } from '../../../../contexts/repository/provider';
-import { selectRepositories } from '../../../../../domain/repository/reducer/selectors';
+import { selectIsLoading, selectRepositories } from '../../../../../domain/repository/reducer/selectors';
+import { Loader } from '../../../../components/loader';
 
 export const DataTable: FunctionComponent = () => {
   const repositories = useSelector(selectRepositories);
+  const isLoading = useSelector(selectIsLoading);
 
   return (
     <Table stickyHeader>
@@ -33,6 +35,15 @@ export const DataTable: FunctionComponent = () => {
             <TableCell>{repository.forks}</TableCell>
           </TableRow>
         ))}
+        {isLoading && (
+          <TableRow>
+            <TableCell />
+            <TableCell>
+              <Loader />
+            </TableCell>
+            <TableCell />
+          </TableRow>
+        )}
       </TableBody>
       <TableFooter>
         <TableRow>

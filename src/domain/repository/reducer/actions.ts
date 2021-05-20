@@ -21,7 +21,12 @@ export const setCursorAction = (payload: string): Action<string> => ({
   payload,
 });
 
-export const setHasNextPages = (payload: boolean): Action<boolean> => ({
+export const setHasNextPagesAction = (payload: boolean): Action<boolean> => ({
   type: Types.SET_HAS_NEXT_PAGE,
+  payload,
+});
+
+export const setIsLoadingAction = (payload: boolean): Action<boolean> => ({
+  type: Types.SET_IS_LOADING,
   payload,
 });

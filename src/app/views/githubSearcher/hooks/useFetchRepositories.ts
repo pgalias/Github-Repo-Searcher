@@ -5,7 +5,12 @@ import { selectEndCursor, selectPageSize, selectSearch } from '../../../../domai
 import { useQuery } from '../../../hooks/useQuery';
 import { REPOSITORIES_API_URL } from '../../../constants/apiUrls';
 import { Repository } from '../../../../domain/repository/model/repository';
-import { setCursorAction, setHasNextPages, setRepositoriesAction } from '../../../../domain/repository/reducer';
+import {
+  setCursorAction,
+  setHasNextPagesAction,
+  setIsLoadingAction,
+  setRepositoriesAction,
+} from '../../../../domain/repository/reducer';
 
 type Response = {
   search: {
@@ -54,8 +59,16 @@ export const useFetchRepositories = (): (() => Promise<void>) => {
 
     dispatch(setRepositoriesAction(repositories));
     dispatch(setCursorAction(pageInfo.endCursor));
-    dispatch(setHasNextPages(pageInfo.hasNextPage));
+    dispatch(setHasNextPagesAction(pageInfo.hasNextPage));
   }, [results]);
 
-  return fetch;
+  return () =>
+    new Promise<void>(resolve => {
+      dispatch(setIsLoadingAction(true));
+      resolve();
+    })
+      .then(fetch)
+      .finally(() => {
+        dispatch(setIsLoadingAction(false));
+      });
 };

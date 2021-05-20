@@ -1,4 +1,10 @@
-import { setCursorAction, setRepositoriesAction, setPageSizeAction, setHasNextPages } from './actions';
+import {
+  setCursorAction,
+  setRepositoriesAction,
+  setPageSizeAction,
+  setHasNextPagesAction,
+  setIsLoadingAction,
+} from './actions';
 import { Types } from './types';
 import { Repository } from '../model/repository';
 
@@ -26,8 +32,15 @@ describe('repositories actions', () => {
   });
 
   test('setHasNextPage should return proper object with type and passed payload', () => {
-    expect(setHasNextPages(true)).toEqual({
+    expect(setHasNextPagesAction(true)).toEqual({
       type: Types.SET_HAS_NEXT_PAGE,
+      payload: true,
+    });
+  });
+
+  test('setIsLoading should return proper object with type and passed payload', () => {
+    expect(setIsLoadingAction(true)).toEqual({
+      type: Types.SET_IS_LOADING,
       payload: true,
     });
   });

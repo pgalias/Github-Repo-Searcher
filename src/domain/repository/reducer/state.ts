@@ -7,12 +7,14 @@ export type Metadata = {
 };
 
 export interface State {
+  isLoading: boolean;
   repositories: Repository[];
   search: string;
   metadata: Metadata;
 }
 
 export const initialState: State = {
+  isLoading: false,
   repositories: [],
   search: 'react',
   metadata: {

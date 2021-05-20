@@ -38,6 +38,11 @@ export const reducer = (state = initialState, { type, payload }: Action<Possible
           hasNextPage: payload as boolean,
         },
       };
+    case Types.SET_IS_LOADING:
+      return {
+        ...state,
+        isLoading: payload as boolean,
+      };
     default:
       return state;
   }

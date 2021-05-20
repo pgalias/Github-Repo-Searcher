@@ -7,7 +7,8 @@ import { useFetchRepositories } from './useFetchRepositories';
 import {
   initialState,
   setCursorAction,
-  setHasNextPages,
+  setHasNextPagesAction,
+  setIsLoadingAction,
   setRepositoriesAction,
 } from '../../../../domain/repository/reducer';
 import { Repository } from '../../../../domain/repository/model/repository';
@@ -33,13 +34,14 @@ describe('useFetchRepositories hook', () => {
   const endCursor = 'cursor';
   const hasNextPage = true;
 
-  test('should return method to fetch repositories', () => {
+  test('should return method to fetch repositories', async () => {
     const fetch = jest.fn();
     (useQuery as jest.Mock).mockReturnValue([undefined, fetch]);
 
     const { result } = renderHook(() => useFetchRepositories(), { wrapper: Wrapper });
 
-    expect(result.current).toEqual(fetch);
+    await result.current();
+    expect(fetch).toHaveBeenCalled();
   });
 
   test('should dispatch received data', async () => {
@@ -68,6 +70,8 @@ describe('useFetchRepositories hook', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(setRepositoriesAction(repositories));
     expect(mockDispatch).toHaveBeenCalledWith(setCursorAction(endCursor));
-    expect(mockDispatch).toHaveBeenCalledWith(setHasNextPages(hasNextPage));
+    expect(mockDispatch).toHaveBeenCalledWith(setHasNextPagesAction(hasNextPage));
+    expect(mockDispatch).toHaveBeenCalledWith(setIsLoadingAction(true));
+    expect(mockDispatch).toHaveBeenCalledWith(setIsLoadingAction(false));
   });
 });
