@@ -1,6 +1,6 @@
 import { selectRepositories, selectMetadata, selectEndCursor, selectHasNextPage, selectPageSize } from './selectors';
-import { initialState, Metadata, State } from '../../../domain/repository/reducer';
-import { Repository } from '../../../domain/repository/model/repository';
+import { initialState, Metadata, State } from './index';
+import { Repository } from '../model/repository';
 
 describe('repository context selectors', () => {
   const repositories: Repository[] = [{ name: 'bar', forks: 2, stars: 4, url: '//github.com/foo/bar' }];

@@ -1,5 +1,5 @@
-import { Metadata, State } from '../../../domain/repository/reducer';
-import { Repository } from '../../../domain/repository/model/repository';
+import { Metadata, State } from './index';
+import { Repository } from '../model/repository';
 
 export const selectRepositories = (store: State): Repository[] => store.repositories;
 export const selectMetadata = (store: State): Metadata => store.metadata;
