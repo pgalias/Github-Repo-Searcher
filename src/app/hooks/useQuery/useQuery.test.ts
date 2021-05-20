@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { GraphQLClient } from '../../../infrastructure/graphqlClient';
 import { useQuery } from './useQuery';
 
@@ -42,7 +42,9 @@ describe('useQuery hooks', () => {
     expect(res).toBe(undefined);
     expect(typeof fetch).toBe('function');
 
-    await fetch();
+    await act(async () => {
+      fetch();
+    });
     expect(result.current[0]).toEqual(response);
   });
 });
