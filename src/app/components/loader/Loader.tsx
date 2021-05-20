@@ -38,7 +38,7 @@ const LoaderWrapper = styled.div`
 `;
 
 export const Loader: FunctionComponent = () => (
-  <LoaderWrapper>
+  <LoaderWrapper role="alert" aria-busy="true">
     <div />
     <div />
     <div />

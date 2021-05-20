@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component should render with react component type children 1`] = `
+<main
+  class="css-1vv3q56"
+>
+  <div
+    class="MuiContainer-root MuiContainer-fixed MuiContainer-maxWidthLg"
+  >
+    <div
+      aria-busy="true"
+      class="css-q3dffh"
+      role="alert"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Main component should render with text type children 1`] = `
+<main
+  class="css-1vv3q56"
+>
+  <div
+    class="MuiContainer-root MuiContainer-fixed MuiContainer-maxWidthLg"
+  >
+    <p>
+      foo
+    </p>
+  </div>
+</main>
+`;
