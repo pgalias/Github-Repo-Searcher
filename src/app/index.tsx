@@ -1,20 +1,32 @@
 import React, { FunctionComponent } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from '@emotion/styled';
 import { Header } from './components/header';
 import { Main } from './components/main';
-import { links } from './constants';
+import { links } from './constants/navigation';
+import { RepositoryProvider } from './contexts/repository/provider';
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+`;
 
 const Layout: FunctionComponent = () => (
-  <Router>
-    <Header />
-    <Main>
-      <Switch>
-        {links.map(link => (
-          <Route path={link.path} component={link.components} exact key={link.name} />
-        ))}
-      </Switch>
-    </Main>
-  </Router>
+  <RepositoryProvider>
+    <Router>
+      <Wrapper>
+        <Header />
+        <Main>
+          <Switch>
+            {links.map(link => (
+              <Route path={link.path} component={link.component} exact key={link.name} />
+            ))}
+          </Switch>
+        </Main>
+      </Wrapper>
+    </Router>
+  </RepositoryProvider>
 );
 
 export default Layout;

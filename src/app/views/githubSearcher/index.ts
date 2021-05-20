@@ -1,0 +1,1 @@
+export { GithubSearcher } from './GithubSearcher';
