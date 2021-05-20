@@ -1,10 +1,4 @@
-import {
-  setCursorAction,
-  fetchRepositoriesAction,
-  setRepositoriesAction,
-  setPageSizeAction,
-  setHasNextPages,
-} from './actions';
+import { setCursorAction, setRepositoriesAction, setPageSizeAction, setHasNextPages } from './actions';
 import { Types } from './types';
 import { Repository } from '../model/repository';
 
@@ -13,12 +7,6 @@ describe('repositories actions', () => {
     expect(setCursorAction('abc')).toEqual({
       type: Types.SET_CURSOR,
       payload: 'abc',
-    });
-  });
-
-  test('fetchRepositoriesAction should return proper object with type', () => {
-    expect(fetchRepositoriesAction()).toEqual({
-      type: Types.FETCH_REPOSITORIES,
     });
   });
 

@@ -8,11 +8,13 @@ export type Metadata = {
 
 export interface State {
   repositories: Repository[];
+  search: string;
   metadata: Metadata;
 }
 
 export const initialState: State = {
   repositories: [],
+  search: 'react',
   metadata: {
     endCursor: null,
     hasNextPage: true,

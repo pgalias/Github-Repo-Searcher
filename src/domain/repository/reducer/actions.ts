@@ -6,10 +6,6 @@ export type Action<T = undefined> = {
   payload?: T;
 };
 
-export const fetchRepositoriesAction = (): Action => ({
-  type: Types.FETCH_REPOSITORIES,
-});
-
 export const setRepositoriesAction = (payload: Repository[]): Action<Repository[]> => ({
   type: Types.SET_REPOSITORIES,
   payload,
