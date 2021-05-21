@@ -1,6 +1,6 @@
 <h1 align="center">Github Repo Searcher</h1>
 
-### ✨ [Demo](https://pgalias.github.io/github-repo-searcher)
+### ✨ [Demo](https://pgalias.github.io/Github-Repo-Searcher)
 
 ## About the project
 
