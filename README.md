@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+<h1 align="center">Github Repo Searcher</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### ✨ [Demo](https://pgalias.github.io/github-repo-searcher)
 
-## Available Scripts
+## About the project
 
-In the project directory, you can run:
+This is minimalistic user interface for searching for React repositories. It's using
+a [GitHub GraphQL API v4](https://developer.github.com/v4/).
+![img.png](app.png)
 
-### `yarn start`
+### Built with
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- Typescript
+- Emotion
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting started
 
-### `yarn test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project [GitHub Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) is required.
 
-### `yarn build`
+### Running the app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Create env file by  `cp .env.dist .env`
+2. Open `.env` file and copy there your personal token under the `REACT_APP_GITHUB_ACCESS_TOKEN` key
+3. Install all dependencies by `yarn install`
+4. Open app by `yarn start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Available commands
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `yarn start` - runs app in dev mode
+- `yarn build` - builds app in prod mode
+- `yarn test` - runs tests in watch mode
+- `yarn coverage` - runs tests in single run with collecting code coverage 
+- `yarn deploy` - builds application and pushes it into gh-pages branch
+- `yarn eslint` - runs eslint on whole project
+- `yarn prettier` - runs prettier on whole project
 
-### `yarn eject`
+## Further changes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Add possibility for user to search a not only React-like repositories
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+👤 **Pawel Galias** - [linkedin](https://linkedin.com/in/pawgalias) - [pawel@galias.me](pawel@galias.me)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Show your support
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Give a ⭐️ if this project helped you!
