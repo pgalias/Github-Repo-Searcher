@@ -9,7 +9,7 @@ jobs:
       - name: Install modules
         run: yarn
       - name: Run linter
-        run: yarn lint
+        run: yarn eslint
       - name: Run test
         run: yarn test
       - name: Deploy
