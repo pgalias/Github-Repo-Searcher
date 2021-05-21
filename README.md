@@ -40,6 +40,7 @@ To run this project [GitHub Personal Access Token](https://docs.github.com/en/gi
 ## Further changes
 
 - Add possibility for user to search a not only React-like repositories
+- Add response's error handling on the UI 
 
 ## Author
 
