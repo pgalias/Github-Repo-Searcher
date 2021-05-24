@@ -12,10 +12,3 @@ jobs:
         run: yarn eslint
       - name: Run test
         run: yarn test
-      - name: Deploy
-        if: github.ref == 'refs/heads/master'
-        env:
-          REACT_APP_GITHUB_ACCESS_TOKEN: ${{ secrets.API_KEY }}
-        run: |
-          git config user.name pgalias && git config user.email pawel@galias.me
-          yarn deploy

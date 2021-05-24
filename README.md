@@ -1,6 +1,6 @@
 <h1 align="center">Github Repo Searcher</h1>
 
-### ✨ [Demo](https://pgalias.github.io/Github-Repo-Searcher)
+### ✨ [Demo](https://github-repo-searcher.netlify.app)
 
 ## About the project
 
@@ -32,8 +32,7 @@ To run this project [GitHub Personal Access Token](https://docs.github.com/en/gi
 - `yarn start` - runs app in dev mode
 - `yarn build` - builds app in prod mode
 - `yarn test` - runs tests in watch mode
-- `yarn coverage` - runs tests in single run with collecting code coverage 
-- `yarn deploy` - builds application and pushes it into gh-pages branch
+- `yarn coverage` - runs tests in single run with collecting code coverage
 - `yarn eslint` - runs eslint on whole project
 - `yarn prettier` - runs prettier on whole project
 

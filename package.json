@@ -30,7 +30,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "coverage": "yarn test --coverage --watchAll=false",
-    "deploy": "node ./deploy.js",
     "prepare": "husky install",
     "eslint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "prettier": "prettier --write src/**/*.ts{,x}"
@@ -64,7 +63,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "execa": "^5.0.0",
     "husky": "^6.0.0",
     "jest-when": "^3.3.1",
     "lint-staged": "^11.0.0",
